@@ -1,0 +1,32 @@
+{
+  "configVersion" : "2025-08-25-2235",
+
+  "bot": {
+    "comment"   : "Some basic bot info; use authUsers to restrict creation of polls to admins.",
+    "name"      : "Sydals ITC Demo Telegram Bot",
+    "authUsers" : [222222222222],
+    "about"     : "Demo bot by Sydals IT Consulting. What would you order in an italian restaurant?"
+  },
+
+  "about_poll_data": "Define polls here as an array of objects. Each has a question, an array of choices, and two booleans whether the poll offers multiple choice and if it's anonymous.",
+  "poll_data": [
+    {
+      "question" : "Would you like some antipasti?",
+      "options"  : ["No, thank you.", "Yes, something with tomatos and mozzarella, please.", "Just some olives, please, drowned in Martini."],
+      "multipleA": false,
+      "anonymous": false
+    },
+    {
+      "question" : "What would you like for the second course?",
+      "options"  : ["Pizza Tonno.", "Spaghetti carbonara.", "Cavatelli con pomodori e funghi porcini e una dose extra di aglio, gracie."],
+      "multipleA": true,
+      "anonymous": false
+    },
+    {
+      "question" : "How about the main course?",
+      "options"  : ["No, thanks, I'm full.", "What was that the man over there got? I'd like that, too.", "Steak. Just bring me some bloody steak."],
+      "multipleA": false,
+      "anonymous": true
+    }
+  ]
+}

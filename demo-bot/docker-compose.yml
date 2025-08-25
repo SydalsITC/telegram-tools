@@ -1,0 +1,14 @@
+---
+#
+# docker-compose.yml for telegram bot
+#
+services:
+  app:
+    image: sydalsitc/telegram-poll-bot:0.9.0-amd64
+    restart: unless-stopped
+    volumes:
+      # Bind mount local folder for loading cfg.json (and in earlier versions writing a log)
+      - .:/app
+    environment:
+      BOTSTELEGRAMTOKEN: ${BOTSTELEGRAMTOKEN}    # pass the telegram token from external env var; use secrets with docker swarn and kubernetes
+

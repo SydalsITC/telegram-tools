@@ -1,0 +1,29 @@
+
+# Demo Telegram Bot
+
+## About
+This is an example for a telegram bot written in python and running in a docker container.
+
+## How it works
+Start the bot with docker compose:
+```
+docker-compose up # in local directory, or
+docker-compose  -f demo-bot/docker-compose.yml up
+```
+Use the flag "-d" for creating a background process if you like.
+
+The demo-bot directory gets mounted inside the container at /app, making code
+and config available. Docker then
+- starts entrypoint.sh
+- that runs the python code
+- which loads the config json file.
+
+## Telegram token
+The bot need a telegram token for authentication. The python code awaits this in an 
+environment variable called BOTSTELEGRAMTOKEN which is passed through from the outside
+by the docker-compose.yml file.
+
+This way works fine for a home setup on a raspberry but is not recommended for production
+environments. Make sure to use secrets with docker swarm and kubernetes while adapting
+the code respectively.
+
