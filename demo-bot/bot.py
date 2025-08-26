@@ -30,7 +30,7 @@ if BOT_TTOKEN == "":
 logging.basicConfig(
   stream=sys.stdout,
   format="%(asctime)s,%(name)s,%(levelname)s,%(message)s",
-  level=logging.WARN
+  level=logging.INFO
 )
 
 
@@ -44,6 +44,7 @@ def restricted(func):
     # if user_id not in LIST_OF_ADMINS:
     if user_id not in cfg["bot"]["authUsers"]:
       logging.info(f"403/access denied: {user_id}")
+      await update.message.reply_text('403/access denied - restricted command.')
       return
     return await func(update, context, *args, **kwargs)
   return wrapped
@@ -135,6 +136,6 @@ if __name__ == '__main__':
   # restricted commands
   application.add_handler(CommandHandler("polls", poll_fn   ))
 
-  logging.warning("Bot is running..." + "\nBot version: " + BOTVERSION + "\nCfg version: " + cfg["configVersion"])
+  logging.info("Bot is running..." + "\nBot version: " + BOTVERSION + "\nCfg version: " + cfg["configVersion"])
   application.run_polling()
 

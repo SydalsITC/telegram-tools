@@ -1,8 +1,12 @@
 
 # Demo Telegram Bot
+An example for a telegram bot written in python and running in a docker container.
 
 ## About
-This is an example for a telegram bot written in python and running in a docker container.
+For a small private project, we needed a bot as member in our telegram group that
+should create always the same polls if it was asked to. So a bot account was
+created using the [telegram botfather](https://telegram.me/BotFather) and some
+bot code written in python, using the python-telegram-bot library.
 
 ## How it works
 Start the bot with docker compose:
@@ -33,7 +37,4 @@ the code respectively.
 - /version - shows version of bot.py and the config file
 - /hello - just says hello and echoes the name of the calling user
 - /userid - shows the numeric user ID of the calling user - which can be used to secure the /polls call just for admins. 
-- /polls - creates the polls which are defined in the config file.
-
-
-
+- /polls - creates the polls which are defined in the config file. _This command is restricted._ Make sure your _numeric_ user ID is in the field 'bot.authUsers' in the config file.
