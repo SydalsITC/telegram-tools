@@ -15,11 +15,15 @@ from functools    import wraps
 BOTVERSION="2025-08-25-2237"
 CONFIGFILE="/app/cfg.json"
 
+#== load telegram auth token from env var
 try:
   BOT_TTOKEN=os.environ["BOTSTELEGRAMTOKEN"]
 except:
   print("Env variable BOTSTELEGRAMTOKEN not set; terminating.")
   exit(1)
+if BOT_TTOKEN == "":
+  print("Env variable BOTSTELEGRAMTOKEN empty; terminating.")
+  exit(2)
 
 #---- Basic logging funktion in the file log_file.log
 # use 'stream=sys.stdout' or 'filename=LOGFILE'

@@ -27,3 +27,13 @@ This way works fine for a home setup on a raspberry but is not recommended for p
 environments. Make sure to use secrets with docker swarm and kubernetes while adapting
 the code respectively.
 
+## Commands
+
+- /about - tells a short story about the bot itself (which ist defined in the config json file).
+- /version - shows version of bot.py and the config file
+- /hello - just says hello and echoes the name of the calling user
+- /userid - shows the numeric user ID of the calling user - which can be used to secure the /polls call just for admins. 
+- /polls - creates the polls which are defined in the config file.
+
+
+
