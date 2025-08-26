@@ -5,8 +5,9 @@ An example for a telegram bot written in python and running in a docker containe
 ## About
 For a small private project, we needed a bot as member in our telegram group that
 should create always the same polls if it was asked to. So a bot account was
-created using the [telegram botfather](https://telegram.me/BotFather) and some
-bot code written in python, using the python-telegram-bot library.
+created using the [telegram botfather](https://telegram.me/BotFather), and some
+bot code written in python, using the
+[python-telegram-bot](https://python-telegram-bot.org) library.
 
 ## How it works
 Start the bot with docker compose:
